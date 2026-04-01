@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhamad Sambas | IT QA Specialist Portfolio</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+        :root { --bg: #0b0f1a; --text: #e2e8f0; --card: rgba(255, 255, 255, 0.03); --accent: #3b82f6; }
+        .light-mode { --bg: #f8fafc; --text: #1e293b; --card: rgba(0, 0, 0, 0.05); --accent: #2563eb; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg); color: var(--text); transition: 0.5s; overflow-x: hidden; }
+        .glass { background: var(--card); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .text-gradient { background: linear-gradient(to right, #3b82f6, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .progress-bar { height: 10px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #3b82f6, #8b5cf6); border-radius: 10px; width: 0; transition: 1.5s ease-in-out; }
+        #qaModal { display: none; transition: 0.3s; }
+        #qaModal.active { display: flex; }
+        .blob { position: absolute; width: 350px; height: 350px; background: var(--accent); filter: blur(100px); border-radius: 50%; z-index: -1; opacity: 0.1; animation: float 12s infinite alternate; }
+        @keyframes float { from { transform: translate(0,0); } to { transform: translate(15%, 15%); } }
+    </style>
+</head>
+<body class="selection:bg-blue-500/30">
+    <div class="blob top-0 left-0"></div>
+
+    <nav class="fixed w-full z-[100] glass py-3 md:py-4 px-4 md:px-10 border-b border-white/5">
+        <div class="container mx-auto flex justify-between items-center">
+            <span class="text-xl font-bold tracking-tighter">M.<span class="text-blue-500">SAMBAS</span></span>
+            <div class="flex items-center space-x-2 md:space-x-5">
+                <a href="https://linkedin.com/in/sambasmuhamad" target="_blank" class="w-9 h-9 md:w-10 md:h-10 flex items-center justify-center rounded-xl glass hover:text-blue-500 transition text-lg">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <button id="lang-toggle" class="px-3 py-1.5 md:px-4 md:py-2 rounded-xl glass text-[9px] md:text-[10px] font-bold border border-blue-500/30 hover:scale-105 transition uppercase tracking-widest">
+                    <span id="lang-label">ID | EN</span>
+                </button>
+                <button id="theme-toggle" class="w-9 h-9 md:w-10 md:h-10 flex items-center justify-center rounded-xl glass hover:scale-110 transition shadow-lg">
+                    <i id="theme-icon" class="fas fa-moon text-blue-400"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="min-h-screen flex items-center px-6 pt-24 md:pt-0">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+            <div data-aos="fade-right" class="text-center md:text-left order-2 md:order-1">
+                <h2 id="hero-tag" class="text-blue-500 font-mono mb-4 text-sm md:text-lg font-bold tracking-[0.2em] uppercase">IT QUALITY ASSURANCE</h2>
+                <h1 class="text-4xl md:text-7xl font-bold mb-6 leading-tight tracking-tighter">Muhamad <span class="text-gradient">Sambas</span></h1>
+                <p id="hero-desc" class="opacity-70 text-sm md:text-lg mb-8 md:mb-10 max-w-lg mx-auto md:mx-0 leading-relaxed font-light">"Dedikasi 2 tahun dalam menjaga integritas sistem perbankan melalui pengujian manual yang presisi.
+				Berfokus pada deteksi bug kritis, validasi data transaksi backend, dan memastikan setiap rilis aplikasi memberikan keamanan maksimal bagi nasabah."</p>
+                <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
+                    <button id="btn-hire" onclick="location.href='#contact'" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-2xl font-bold shadow-xl transition active:scale-95 text-sm md:text-base">Hubungi Saya</button>
+                    <button onclick="window.open('https://linkedin.com/in/sambasmuhamad')" class="glass px-8 py-4 rounded-2xl font-bold flex items-center justify-center gap-3 border border-white/10 text-sm md:text-base hover:bg-blue-600 hover:text-white transition">
+                        <i class="fab fa-linkedin text-xl"></i> LinkedIn
+                    </button>
+                </div>
+            </div>
+            <div class="flex justify-center order-1 md:order-2" data-aos="zoom-in">
+                <div class="glass p-2 md:p-3 rounded-[2.5rem] md:rounded-[3.5rem] rotate-2 hover:rotate-0 transition duration-1000 shadow-2xl">
+                    <div class="bg-slate-800 w-56 h-72 sm:w-64 sm:h-80 md:w-80 md:h-[28rem] rounded-[2rem] md:rounded-[3rem] overflow-hidden">
+                        <img src="img/foto-profil.png" alt="Sambas Profil" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-16 md:py-24 bg-blue-500/5 px-6">
+        <div class="container mx-auto">
+            <h3 id="skill-title" class="text-2xl md:text-3xl font-bold mb-12 text-center" data-aos="fade-up">Keahlian <span class="text-blue-500">& Tools</span></h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 max-w-4xl mx-auto text-left">
+                <div class="space-y-6 md:space-y-8">
+                    <div>
+                        <div class="flex justify-between mb-3 font-bold text-xs md:text-sm uppercase tracking-wide"><span>Manual Testing (SIT/UAT)</span><span>95%</span></div>
+                        <div class="progress-bar"><div class="progress-fill" data-width="95%"></div></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-3 font-bold text-xs md:text-sm uppercase tracking-wide"><span>SQL Server / DBeaver</span><span>85%</span></div>
+                        <div class="progress-bar"><div class="progress-fill" data-width="85%"></div></div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 md:gap-6">
+                    <div class="glass p-6 md:p-8 rounded-3xl text-center" data-aos="zoom-in">
+                        <i class="fas fa-bug text-3xl text-blue-500 mb-3"></i>
+                        <h4 class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest opacity-60">JIRA Tracking</h4>
+                    </div>
+                    <div class="glass p-6 md:p-8 rounded-3xl text-center" data-aos="zoom-in" data-aos-delay="100">
+                        <i class="fas fa-plug text-3xl text-purple-500 mb-3"></i>
+                        <h4 class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest opacity-60">Postman API</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-16 md:py-24 px-6">
+        <div class="container mx-auto max-w-4xl text-left">
+            <h3 id="exp-title" class="text-2xl md:text-3xl font-bold mb-16 border-l-8 border-blue-500 pl-6" data-aos="fade-right">Riwayat <span class="text-blue-500">Kerja</span></h3>
+            <div class="relative border-l-2 border-slate-800 ml-4 space-y-12">
+                <div class="relative pl-10" data-aos="fade-up">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 bg-blue-500 rounded-full shadow-[0_0_15px_#3b82f6]"></div>
+                    <div class="glass p-6 md:p-8 rounded-[2rem]">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4 gap-2">
+                            <h4 class="text-xl md:text-2xl font-bold uppercase">IT QA Specialist</h4>
+                            <span class="text-blue-500 font-mono font-bold text-xs md:text-sm">Mei 2024 - Sekarang</span>
+                        </div>
+                        <p id="exp-company" class="text-sm font-bold opacity-60 mb-4 italic">PT Bank Syariah Indonesia Tbk (BSI).</p>
+                        <ul id="exp-list" class="space-y-3 opacity-80 text-xs md:text-sm list-disc list-inside leading-relaxed font-light">
+                            <li>Eksekusi 50+ test cases SIT untuk Project Medina.</li>
+                            <li>Pelacakan bug menggunakan JIRA hingga tahap verifikasi.</li>
+                            <li>Validasi backend menggunakan SQL Server, DBeaver, & FileZilla.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="works" class="py-16 md:py-24 bg-blue-500/5 px-6">
+        <div class="container mx-auto">
+            <h3 id="work-title" class="text-2xl md:text-3xl font-bold mb-12 text-center" data-aos="fade-up">Proyek <span class="text-blue-500">Pilihan</span></h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-10 max-w-4xl mx-auto text-left">
+                <div class="glass p-5 md:p-6 rounded-[2.5rem] group cursor-pointer" onclick="handleModal(0)" data-aos="zoom-in">
+                    <div class="h-40 md:h-48 bg-slate-900 rounded-2xl mb-5 overflow-hidden relative flex items-center justify-center">
+                        <img src="img/MEDINA.png" class="w-full h-full object-cover opacity-40 group-hover:scale-110 transition duration-700">
+                        <span class="absolute font-bold text-blue-400 text-xs md:text-sm tracking-widest uppercase">Medina KPR</span>
+                    </div>
+                    <h4 id="proj-1-title" class="font-bold text-lg md:text-xl mb-2 px-2">Medina KPR</h4>
+                    <p id="proj-1-desc" class="text-xs md:text-sm opacity-50 px-2 font-light italic">Klik untuk melihat detail SIT.</p>
+                </div>
+                <div class="glass p-5 md:p-6 rounded-[2.5rem] group cursor-pointer" onclick="handleModal(1)" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="h-40 md:h-48 bg-slate-900 rounded-2xl mb-5 overflow-hidden relative flex items-center justify-center">
+                        <img src="img/NCMS.png" class="w-full h-full object-cover opacity-40 group-hover:scale-110 transition duration-700">
+                        <span class="absolute font-bold text-purple-400 text-xs md:text-sm tracking-widest uppercase">NCMS / CMS</span>
+                    </div>
+                    <h4 id="proj-2-title" class="font-bold text-lg md:text-xl mb-2 px-2">Transfer NCMS</h4>
+                    <p id="proj-2-desc" class="text-xs md:text-sm opacity-50 px-2 font-light italic">Klik untuk melihat detail database.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 md:py-24 px-6">
+        <div class="container mx-auto max-w-xl text-center">
+            <div class="glass p-8 md:p-14 rounded-[3.5rem] shadow-2xl" data-aos="flip-left">
+                <h3 id="contact-title" class="text-2xl md:text-3xl font-bold mb-10">Hubungi <span class="text-gradient">Sambas</span></h3>
+                <form class="space-y-4 md:space-y-6">
+                    <input type="text" id="name" placeholder="Nama Lengkap" class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:ring-2 focus:ring-blue-500 outline-none transition text-sm">
+                    <textarea id="message" rows="3" placeholder="Pesan..." class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:ring-2 focus:ring-blue-500 outline-none transition text-sm"></textarea>
+                    <button type="button" onclick="sendToWhatsApp()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-4 rounded-2xl font-bold shadow-xl transition active:scale-95 flex items-center justify-center gap-3 text-sm md:text-base">
+                        <i class="fab fa-whatsapp text-2xl"></i> WhatsApp
+                    </button>
+                    <button type="button" onclick="copyEmail()" class="text-[10px] md:text-xs opacity-50 hover:opacity-100 transition uppercase tracking-widest"><i class="far fa-envelope mr-2"></i> Klik Untuk Salin Email</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <a href="CV_Muhamad_Sambas.pdf" target="_blank" class="fixed bottom-6 right-6 z-[60] group flex items-center gap-3 bg-blue-600 text-white px-5 py-3 md:px-7 md:py-4 rounded-2xl font-bold shadow-2xl hover:scale-105 active:scale-95 transition-all text-xs">
+        <i class="fas fa-file-pdf text-lg"></i> <span id="btn-cv" class="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 whitespace-nowrap uppercase tracking-widest">Unduh CV PDF</span>
+    </a>
+
+    <div id="qaModal" class="fixed inset-0 z-[200] hidden items-center justify-center p-5 bg-black/95 backdrop-blur-md">
+        <div class="glass w-full max-w-lg p-8 md:p-10 rounded-[3rem] relative shadow-2xl scale-95 transition-all duration-300">
+            <button onclick="closeModal()" class="absolute top-8 right-8 text-2xl opacity-50 hover:opacity-100">&times;</button>
+            <h4 id="modalTitle" class="text-xl md:text-2xl font-bold mb-6 text-blue-500 pr-8"></h4>
+            <div id="modalBody" class="leading-relaxed opacity-80 text-sm md:text-lg"></div>
+        </div>
+    </div>
+
+    <footer class="py-12 border-t border-white/5 text-center px-6">
+        <div class="flex justify-center gap-6 mb-6 text-2xl opacity-50">
+            <a href="https://linkedin.com/in/sambasmuhamad" target="_blank" class="hover:text-blue-500 transition"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:sambasmuhamad6@gmail.com" class="hover:text-blue-500 transition"><i class="far fa-envelope"></i></a>
+        </div>
+        <p id="footer-text" class="opacity-30 text-[9px] md:text-xs tracking-widest uppercase italic">
+            &copy; 2026 Muhamad Sambas • Professional IT QA Portfolio
+        </p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        const i18n = {
+            id: {
+                label: "ID | EN", tag: "IT QUALITY ASSURANCE",
+                desc: "Junior Tester dengan pengalaman 1,5 tahun di PT Bank Syariah Indonesia Tbk (BSI). Fokus pada Manual Testing, SIT, dan validasi Database perbankan.",
+                hire: "Hubungi Saya", skill: "Keahlian <span class='text-blue-500'>& Tools</span>",
+                exp: "Riwayat <span class='text-blue-500'>Kerja</span>",
+                list: "<li>Eksekusi 50+ test cases SIT untuk Project Medina.</li><li>Pelacakan bug menggunakan JIRA hingga verifikasi.</li><li>Validasi backend menggunakan SQL Server & DBeaver.</li>",
+                work: "Proyek <span class='text-blue-500'>Pilihan</span>", p1T: "Medina KPR", p1D: "Klik untuk melihat detail SIT.",
+                p2T: "NCMS/CMS", p2D: "Klik untuk melihat detail database.",
+                modal1: "<b>Role:</b> QA Specialist<br><b>Focus:</b> SIT Project Medina (KPR Finance) dengan eksekusi 50+ skenario uji sistem perbankan syariah.",
+                modal2: "<b>Focus:</b> CMS (Cash Management System). Validasi data transfer dan integrasi API menggunakan SQL Server & DBeaver.",
+                contact: "Hubungi <span class='text-gradient'>Sambas</span>", cv: "Unduh CV PDF", footer: "&copy; 2026 Muhamad Sambas • Professional IT QA Portfolio"
+            },
+            en: {
+                label: "EN | ID", tag: "IT QA SPECIALIST",
+                desc: "Junior Tester with 1.5 years experience at PT Bank Syariah Indonesia Tbk (BSI). Focused on Manual Testing, SIT, and banking Database validation.",
+                hire: "Hire Me", skill: "Technical <span class='text-blue-500'>Stacks</span>",
+                exp: "Work <span class='text-blue-500'>History</span>",
+                list: "<li>Execution of 50+ SIT test cases for Medina Project.</li><li>Bug tracking and management via JIRA until verification.</li><li>Backend validation via SQL Server, DBeaver, & FileZilla.</li>",
+                work: "Featured <span class='text-blue-500'>Projects</span>", p1T: "Medina KPR", p1D: "Click for SIT details.",
+                p2T: "NCMS/CMS", p2D: "Click for database details.",
+                modal1: "<b>Role:</b> QA Specialist<br><b>Focus:</b> SIT Medina Project (KPR Finance) executing 50+ banking system test scenarios.",
+                modal2: "<b>Focus:</b> CMS (Cash Management System). Validation of transfer data and API integration via SQL Server & DBeaver.",
+                contact: "Connect with <span class='text-gradient'>Sambas</span>", cv: "Download CV PDF", footer: "&copy; 2026 Muhamad Sambas • Professional IT QA Portfolio"
+            }
+        };
+
+        let lang = 'id';
+        function setLang() {
+            const t = i18n[lang];
+            document.getElementById('lang-label').innerText = t.label;
+            document.getElementById('hero-tag').innerText = t.tag;
+            document.getElementById('hero-desc').innerText = t.desc;
+            document.getElementById('btn-hire').innerText = t.hire;
+            document.getElementById('skill-title').innerHTML = t.skill;
+            document.getElementById('exp-title').innerHTML = t.exp;
+            document.getElementById('exp-list').innerHTML = t.list;
+            document.getElementById('work-title').innerHTML = t.work;
+            document.getElementById('proj-1-title').innerText = t.p1T;
+            document.getElementById('proj-1-desc').innerText = t.p1D;
+            document.getElementById('proj-2-title').innerText = t.p2T;
+            document.getElementById('proj-2-desc').innerText = t.p2D;
+            document.getElementById('contact-title').innerHTML = t.contact;
+            document.getElementById('btn-cv').innerText = t.cv;
+            document.getElementById('footer-text').innerHTML = t.footer;
+        }
+
+        document.getElementById('lang-toggle').addEventListener('click', () => {
+            lang = lang === 'id' ? 'en' : 'id';
+            setLang();
+        });
+
+        function handleModal(idx) {
+            const t = i18n[lang];
+            document.getElementById('modalTitle').innerText = idx === 0 ? t.p1T : t.p2T;
+            document.getElementById('modalBody').innerHTML = idx === 0 ? t.modal1 : t.modal2;
+            document.getElementById('qaModal').classList.add('active');
+        }
+        function closeModal() { document.getElementById('qaModal').classList.remove('active'); }
+
+        function sendToWhatsApp() {
+            const n = document.getElementById('name').value;
+            const m = document.getElementById('message').value;
+            if(n && m) window.open(`https://wa.me/6285716268600?text=Halo Sambas, saya ${n}. %0A%0A${m}`);
+            else alert('Lengkapi data Anda.');
+        }
+
+        function copyEmail() {
+            navigator.clipboard.writeText("sambasmuhamad6@gmail.com");
+            alert("Email disalin!");
+        }
+
+        document.getElementById('theme-toggle').addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            document.getElementById('theme-icon').classList.toggle('fa-moon');
+            document.getElementById('theme-icon').classList.toggle('fa-sun');
+        });
+
+        window.addEventListener('scroll', () => {
+            const pos = document.getElementById('skills').getBoundingClientRect().top;
+            if(pos < window.innerHeight / 1.5) {
+                document.querySelectorAll('.progress-fill').forEach(bar => bar.style.width = bar.dataset.width);
+            }
+        });
+    </script>
+</body>
+</html>
