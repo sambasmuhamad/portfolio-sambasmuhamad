@@ -1,2 +1,2 @@
 # Sambas Muhamad portfolio
-portfolio Sambas Muhamad
+Portofolio Muhamad Sambas (Digital Information)
